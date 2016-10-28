@@ -1,0 +1,43 @@
+{
+    "name": "Binsearch+",
+    "version": "2016.10.28",
+    "manifest_version": 2,
+    "description": "Adds a few features to the Binsearch search engine",
+    "homepage_url": "https://github.com/mbirth/binsearchplus",
+    "background": {
+        "scripts": [ "background.js" ],
+        "persistent": true
+    },
+    "page_action": {
+        "default_title": "Binsearch+",
+        "default_icon": {
+            "19": "binsearchplus_19.png",
+            "38": "binsearchplus_38.png"
+        },
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "declarativeContent",
+        "webRequest",
+        "webRequestBlocking",
+        "tabs", "*://binsearch.info/", "*://binsearch.net/"
+    ],
+    "content_scripts": [
+        {
+          "matches": ["http://binsearch.info/*", "http://binsearch.net/*"],
+          "js": ["content.js"],
+          "run_at": "document_idle"
+        }
+    ],
+    "icons": {
+        "16": "binsearchplus_16.png",
+        "19": "binsearchplus_19.png",
+        "38": "binsearchplus_38.png",
+        "48": "binsearchplus_48.png",
+        "64": "binsearchplus_64.png",
+        "128": "binsearchplus_128.png"
+    },
+    "web_accessible_resources": [
+        "binsearchplus_16.png"
+    ]
+}
