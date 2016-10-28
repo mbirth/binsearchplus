@@ -4,8 +4,8 @@ Binsearch+
 This is a Chrome extension which adds a few features to Binsearch, such as:
 
 * Makes radio button labels clickable
+* Make full row clickable to toggle checkbox
 * planned: Keep search term when switching between basic/advanced search
-* planned: Make full row clickable to toggle checkbox
 * planned: Button "unselect all"
 * planned: Automatically select all entries with the same basename
 
