@@ -32,3 +32,12 @@ for input in inputs
     spanfor.value = input['id']
     span.attributes.setNamedItem spanfor
     textElem.replaceWith span
+
+# Make rows of results table clickable
+tbl = document.getElementById 'r2'
+rows = tbl.querySelectorAll 'tr'
+for row in rows
+    row.onclick = (e) ->
+        #console.log 'Clicked %o with %o', this, e
+        chckbx = this.querySelector 'input[type="checkbox"]'
+        chckbx.checked = !chckbx.checked
