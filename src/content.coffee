@@ -41,3 +41,21 @@ for row in rows
         #console.log 'Clicked %o with %o', this, e
         chckbx = this.querySelector 'input[type="checkbox"]'
         chckbx.checked = !chckbx.checked
+
+# Add unselect-all button
+buttons = document.getElementsByClassName 'b'
+for btn in buttons
+    continue if btn.value isnt 'Create NZB'
+    spacer1 = document.createTextNode ' '
+    btn.parentNode.insertBefore spacer1, btn
+    newbtn = document.createElement 'input'
+    newbtn.type      = 'button'
+    newbtn.className = 'b'
+    newbtn.value     = 'Unselect all'
+    newbtn.onclick   = ->
+        for cbx in document.getElementById('r2').querySelectorAll('input[type="checkbox"]')
+            cbx.checked = false
+    btn.parentNode.insertBefore newbtn, btn
+    spacer2 = document.createTextNode ' '
+    btn.parentNode.insertBefore spacer2, btn
+    break
